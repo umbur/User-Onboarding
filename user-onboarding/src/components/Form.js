@@ -23,10 +23,13 @@ const UserForm = ({ errors, touched, values, handleSubmit, status }) => {
           {touched.password && errors.password && (
           <p className="error">{errors.password}</p>)}
           <label>Term Of Service</label>
-          <Field type="checkbox" name="tos" checked={''} />
+          <Field type="checkbox" name="tos" checked={values.tos} />
           <button type="submit">Submit!</button>
         </Form>
+        {users.map(user => {return <h1>{user.name}</h1>}) }
       </div>
+
+     
     );
   };
 
